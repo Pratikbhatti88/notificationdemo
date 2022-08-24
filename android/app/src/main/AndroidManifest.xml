@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.notificationdemo">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.notification_demo">
    <application
-        android:label="notificationdemo"
+        android:label="notification_demo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -30,5 +31,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+       <service
+           android:name="com.dexterous.flutterlocalnotifications.ForegroundService"
+           android:exported="false"
+           android:stopWithTask="false"
+           tools:ignore="MissingClass" />
     </application>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 </manifest>
